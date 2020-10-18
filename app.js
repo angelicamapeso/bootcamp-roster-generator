@@ -34,22 +34,6 @@ const render = require("./lib/htmlRenderer");
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
 
-//1st set of questions:
-  //Welcome to the team roster generator!
-  //To generate a new roster, you'll need to input information about the manager first.
-  //01 - start
-  //02 - exit
-
-//ask questions about manager
-  //once finished
-
-  //thank you! You may now add employees on your team.
-  //01 - Add Engineer
-  //02 - Add Intern
-  //03 - Add Manager
-  //04 - Render page and exit
-  //05 - exit without rendering
-
 function getEmployeeQuestions(employeeRole) {
   const employeeQuestions = [
     {
