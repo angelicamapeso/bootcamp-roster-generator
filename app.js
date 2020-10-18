@@ -95,6 +95,17 @@ Note: To generate a new roster, you'll need to input information about the team'
   return answers.isStarting;
 }
 
+async function getManagerInfo() {
+  const managerQuestions = EMPLOYEE_QUESTIONS.slice(0);
+  managerQuestions.push({
+    type: 'input',
+    name: 'officeNumber',
+    message: "What is the employee's office number?"
+  });
+
+  console.log('\n----- GETTING MANAGER INFO -----');
+}
+
 async function runApp() {
   const isStarting = await askToStart();
   console.log(isStarting);
