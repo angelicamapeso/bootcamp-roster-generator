@@ -70,6 +70,9 @@ function getEmployeeQuestions(employeeRole) {
     case 'Manager':
       employeeQuestions.push(MANAGER_QUESTION);
       break;
+    case 'Intern':
+      employeeQuestions.push(INTERN_QUESTION);
+      break;
     default:
       throw new Error('Employee role does not exist!');
   }
@@ -133,6 +136,8 @@ async function getEmployeeInfo(role) {
   switch(role) {
     case 'Manager':
       return new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
+    case 'Intern':
+      return new Intern(answers.name, answers.id, answers.email, answers.school);
   }
 }
 
