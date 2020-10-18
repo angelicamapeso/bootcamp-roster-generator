@@ -110,6 +110,7 @@ async function getManagerInfo() {
 }
 
 async function runApp() {
+  const employees = [];
   const isStarting = await askToStart();
   if (isStarting) {
     const manager = await getManagerInfo();
