@@ -116,6 +116,8 @@ async function askAction(teamLength) {
   ];
 
   console.log(`\nYour team currently consists of: ${teamLength} member${teamLength > 1 ? 's' : ''}`);
+  const answer = await inquirer.prompt(actions);
+  return answer.action;
 }
 
 async function getManagerInfo() {
