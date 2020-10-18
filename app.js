@@ -118,12 +118,15 @@ async function askAction(teamLength) {
   return answer.action;
 }
 
-async function getManagerInfo() {
-  const managerQuestions = getEmployeeQuestions('Manager');
-  console.log('\n----- GETTING MANAGER INFO -----');
-  const answers = await inquirer.prompt(managerQuestions);
-  const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
-  return manager;
+async function getEmployeeInfo(role) {
+  const questions = getEmployeeQuestions(role);
+
+  console.log(`\n----- GETTING ${role.toUpperCase()} INFO -----`);
+  const answers = await inquirer.prompt(questions);
+  switch(role) {
+    case 'Manager':
+      return new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
+  }
 }
 
 async function runApp() {
@@ -131,7 +134,7 @@ async function runApp() {
   const employees = [];
   const isStarting = await askToStart();
   if (isStarting) {
-    const manager = await getManagerInfo();
+    const manager = await getEmployeeInfo('Manager');
     employees.push(manager);
 
     while (!exitProgram) {
