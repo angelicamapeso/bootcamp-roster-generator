@@ -104,6 +104,9 @@ async function getManagerInfo() {
   });
 
   console.log('\n----- GETTING MANAGER INFO -----');
+  const answers = await inquirer.prompt(managerQuestions);
+  const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
+  return manager;
 }
 
 async function runApp() {
