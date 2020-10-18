@@ -50,23 +50,28 @@ const render = require("./lib/htmlRenderer");
   //04 - Render page and exit
   //05 - exit without rendering
 
-const EMPLOYEE_QUESTIONS = [
-  {
-    type: 'input',
-    name: 'name',
-    message: "What is the employee's name?",
-  },
-  {
-    type: 'input',
-    name: 'id',
-    message: "What is the employee's id?",
-  },
-  {
-    type: 'input',
-    name: 'email',
-    message: "What is the employee's email?",
-  }
-]
+function getEmployeeQuestions(employeeRole) {
+  const employeeQuestions = [
+    {
+      type: 'input',
+      name: 'name',
+      message: `What is the ${employeeRole}'s name?`,
+    },
+    {
+      type: 'input',
+      name: 'id',
+      message: `What is the ${employeeRole}'s id?`,
+    },
+    {
+      type: 'input',
+      name: 'email',
+      message: `What is the ${employeeRole}'s email?`,
+    }
+  ]
+  //returning a copy so that additional changes made by other questions
+  //will not affect one another
+  return employeeQuestions.slice(0);
+}
 
 async function askToStart() {
   const intro = [
@@ -96,7 +101,7 @@ Note: To generate a new roster, you'll need to input information about the team'
 }
 
 async function getManagerInfo() {
-  const managerQuestions = EMPLOYEE_QUESTIONS.slice(0);
+  const managerQuestions = getEmployeeQuestions('Manager');
   managerQuestions.push({
     type: 'input',
     name: 'officeNumber',
