@@ -114,6 +114,7 @@ async function runApp() {
   const isStarting = await askToStart();
   if (isStarting) {
     const manager = await getManagerInfo();
+    employees.push(manager);
   }
   //if start getting info
   //ask manager questions
