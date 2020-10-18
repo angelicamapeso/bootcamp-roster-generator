@@ -48,6 +48,12 @@ const INTERN_QUESTION = {
   message: "What school is the Intern currently attending?",
 }
 
+const ENGINEER_QUESTION = {
+  type: 'input',
+  name: 'github',
+  message: "What is the Engineer's GitHub username?",
+}
+
 function getEmployeeQuestions(employeeRole) {
   const employeeQuestions = [
     {
