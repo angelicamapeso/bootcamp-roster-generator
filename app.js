@@ -168,7 +168,8 @@ async function runApp() {
           employees.push(intern);
           break;
         case 'Add Engineer':
-          console.log('\n-----GETTING ENGINEER INFO-----');
+          const engineer = await getEmployeeInfo('Engineer');
+          employees.push(engineer);
           break;
         case 'Render HTML':
           console.log('\n-----RENDERING HTML-----');
