@@ -160,12 +160,6 @@ async function runApp() {
       }
     }
   }
-  //if start getting info
-  //ask manager questions
-  //thank you
-  //enter while loop
-    //retrieve option
-    //process, run necessary - render will create page and break loop, exit will exit
 }
 
 runApp();
