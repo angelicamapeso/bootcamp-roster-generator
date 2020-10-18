@@ -50,6 +50,24 @@ const render = require("./lib/htmlRenderer");
   //04 - Render page and exit
   //05 - exit without rendering
 
+const EMPLOYEE_QUESTIONS = [
+  {
+    type: 'input',
+    name: 'name',
+    message: "What is the employee's name?",
+  },
+  {
+    type: 'input',
+    name: 'id',
+    message: "What is the employee's id?",
+  },
+  {
+    type: 'input',
+    name: 'email',
+    message: "What is the employee's email?",
+  }
+]
+
 async function askToStart() {
   const intro = [
     {
