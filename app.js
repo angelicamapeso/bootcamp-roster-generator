@@ -140,6 +140,7 @@ async function runApp() {
   if (isStarting) {
     const manager = await getManagerInfo();
     employees.push(manager);
+    const action = await askAction(employees.length);
   }
   //if start getting info
   //ask manager questions
