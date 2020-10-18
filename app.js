@@ -78,6 +78,8 @@ Note: To generate a new roster, you'll need to input information about the team'
 }
 
 async function runApp() {
+  const isStarting = await askToStart();
+  console.log(isStarting);
 }
 
 runApp();
