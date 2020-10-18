@@ -140,7 +140,22 @@ async function runApp() {
   if (isStarting) {
     const manager = await getManagerInfo();
     employees.push(manager);
+
     const action = await askAction(employees.length);
+    switch(action) {
+      case 'Add Intern':
+        console.log('\n-----GETTING INTERN INFO-----');
+        break;
+      case 'Add Engineer':
+        console.log('\n-----GETTING ENGINEER INFO-----');
+        break;
+      case 'Render HTML':
+        console.log('\n-----RENDERING HTML-----');
+        break;
+      case 'Exit without rendering':
+      default:
+        console.log('\nExiting program');
+    }
   }
   //if start getting info
   //ask manager questions
