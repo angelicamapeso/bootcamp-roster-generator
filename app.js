@@ -50,6 +50,9 @@ const render = require("./lib/htmlRenderer");
   //04 - Render page and exit
   //05 - exit without rendering
 
+async function askToStart() {
+}
+
 async function runApp() {
 }
 
