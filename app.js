@@ -51,6 +51,28 @@ const render = require("./lib/htmlRenderer");
   //05 - exit without rendering
 
 async function askToStart() {
+  const intro = [
+    {
+      type: 'list',
+      name: 'isStarting',
+      message: "What would you like to do?",
+      choices: [
+        {
+          name: 'Start',
+          value: true,
+        },
+        {
+          name: 'Exit',
+          value: false,
+        }
+      ]
+    }
+  ];
+
+  console.log(`
+Welcome to the Team Roster Generator!
+Note: To generate a new roster, you'll need to input information about the team's manager first.
+`);
 }
 
 async function runApp() {
