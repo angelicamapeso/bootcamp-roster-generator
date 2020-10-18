@@ -41,6 +41,13 @@ const MANAGER_QUESTION = {
   name: 'officeNumber',
   message: "What is the Manager's office number?",
 }
+
+const INTERN_QUESTION = {
+  type: 'input',
+  name: 'school',
+  message: "What school is the Intern currently attending?",
+}
+
 function getEmployeeQuestions(employeeRole) {
   const employeeQuestions = [
     {
