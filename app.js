@@ -59,6 +59,13 @@ function getEmployeeQuestions(employeeRole) {
       message: `What is the ${employeeRole}'s email?`,
     }
   ]
+  switch(employeeRole) {
+    case 'Manager':
+      employeeQuestions.push(MANAGER_QUESTION);
+      break;
+    default:
+      throw new Error('Employee role does not exist!');
+  }
   //returning a copy so that additional changes made by other questions
   //will not affect one another
   return employeeQuestions.slice(0);
@@ -113,12 +120,6 @@ async function askAction(teamLength) {
 
 async function getManagerInfo() {
   const managerQuestions = getEmployeeQuestions('Manager');
-  managerQuestions.push({
-    type: 'input',
-    name: 'officeNumber',
-    message: "What is the employee's office number?"
-  });
-
   console.log('\n----- GETTING MANAGER INFO -----');
   const answers = await inquirer.prompt(managerQuestions);
   const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
