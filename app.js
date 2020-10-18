@@ -153,7 +153,8 @@ async function runApp() {
       const action = await askAction(employees.length);
       switch(action) {
         case 'Add Intern':
-          console.log('\n-----GETTING INTERN INFO-----');
+          const intern = await getEmployeeInfo('Intern');
+          employees.push(intern);
           break;
         case 'Add Engineer':
           console.log('\n-----GETTING ENGINEER INFO-----');
