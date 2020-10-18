@@ -80,6 +80,12 @@ Note: To generate a new roster, you'll need to input information about the team'
 async function runApp() {
   const isStarting = await askToStart();
   console.log(isStarting);
+  //if start getting info
+  //ask manager questions
+  //thank you
+  //enter while loop
+    //retrieve option
+    //process, run necessary - render will create page and break loop, exit will exit
 }
 
 runApp();
