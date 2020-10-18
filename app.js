@@ -111,7 +111,9 @@ async function getManagerInfo() {
 
 async function runApp() {
   const isStarting = await askToStart();
-  console.log(isStarting);
+  if (isStarting) {
+    const manager = await getManagerInfo();
+  }
   //if start getting info
   //ask manager questions
   //thank you
