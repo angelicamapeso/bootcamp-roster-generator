@@ -100,6 +100,24 @@ Note: To generate a new roster, you'll need to input information about the team'
   return answers.isStarting;
 }
 
+async function askAction(teamLength) {
+  const actions = [
+    {
+      type: 'list',
+      name: 'action',
+      message: 'What would you like to do?',
+      choices: [
+        'Add Intern',
+        'Add Engineer',
+        'Render HTML',
+        'Exit without rendering',
+      ]
+    }
+  ];
+
+  console.log(`\nYour team currently consists of: ${teamLength} member${teamLength > 1 ? 's' : ''}`);
+}
+
 async function getManagerInfo() {
   const managerQuestions = getEmployeeQuestions('Manager');
   managerQuestions.push({
