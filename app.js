@@ -34,6 +34,13 @@ const render = require("./lib/htmlRenderer");
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
 
+//since managers, interns and engineers have one additional property
+//only need one additional question to generic employee questions
+const MANAGER_QUESTION = {
+  type: 'input',
+  name: 'officeNumber',
+  message: "What is the Manager's office number?",
+}
 function getEmployeeQuestions(employeeRole) {
   const employeeQuestions = [
     {
