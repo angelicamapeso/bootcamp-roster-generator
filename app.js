@@ -49,3 +49,8 @@ const render = require("./lib/htmlRenderer");
   //03 - Add Manager
   //04 - Render page and exit
   //05 - exit without rendering
+
+async function runApp() {
+}
+
+runApp();
