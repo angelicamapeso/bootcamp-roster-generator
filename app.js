@@ -166,13 +166,15 @@ async function runApp() {
           break;
         case 'Render Team Roster':
           generateHTMLFile(employees);
+          exitProgram = true;
+          break;
         case 'Exit without Rendering':
         default:
+          console.log('\nThank you for using the Roster Generator!\nExiting program ...');
           exitProgram = true;
       }
     }
   }
-  console.log('\nExiting program');
 }
 
 runApp();
