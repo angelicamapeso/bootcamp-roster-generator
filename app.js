@@ -131,16 +131,10 @@ function generateHTMLFile(employees) {
     fs.mkdir(OUTPUT_DIR, (err) => {
       if (err) throw err;
 
-      fs.writeFile(outputPath, htmlPage, (err) => {
-        if (err) throw err;
-        console.log('\nFile successfully created!\nThanks for using the Roster Generator!');
-      });
+      writeHTML(outputPath, htmlPage);
     });
   } else {
-    fs.writeFile(outputPath, htmlPage, (err) => {
-      if (err) throw err;
-      console.log('\nFile successfully created!\nThanks for using the Roster Generator!');
-    });
+    writeHTML(outputPath, htmlPage);
   }
 }
 
