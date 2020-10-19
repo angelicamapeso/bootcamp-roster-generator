@@ -175,11 +175,11 @@ async function runApp() {
           console.log('\n-----RENDERING HTML-----');
         case 'Exit without rendering':
         default:
-          console.log('\nExiting program');
           exitProgram = true;
       }
     }
   }
+  console.log('\nExiting program');
 }
 
 runApp();
