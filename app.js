@@ -147,6 +147,7 @@ function generateHTMLFile(employees) {
 async function runApp() {
   let exitProgram = false;
   const employees = [];
+
   const isStarting = await askToStart();
   if (isStarting) {
     const manager = await getEmployeeInfo('Manager');
