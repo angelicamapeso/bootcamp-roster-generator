@@ -7,7 +7,6 @@ const fs = require("fs");
 
 const render = require("./lib/htmlRenderer");
 
-//----------------- QUESTIONS -----------------//
 //since managers, interns and engineers have one additional property
 //only need one additional question to generic employee questions
 function getEmployeeQuestions(employeeRole) {
