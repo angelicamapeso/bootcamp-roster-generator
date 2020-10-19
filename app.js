@@ -128,7 +128,7 @@ function generateHTMLFile(employees) {
   console.log('\n-----RENDERING HTML-----');
 
   if (!fs.existsSync(OUTPUT_DIR)) {
-    console.log('\nOutput directory does not exist. Creating one now.');
+    console.log('\nCreating output directory (output/) ...');
     fs.mkdir(OUTPUT_DIR, (err) => {
       if (err) throw err;
 
