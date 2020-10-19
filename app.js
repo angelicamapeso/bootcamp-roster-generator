@@ -10,24 +10,6 @@ const render = require("./lib/htmlRenderer");
 //----------------- QUESTIONS -----------------//
 //since managers, interns and engineers have one additional property
 //only need one additional question to generic employee questions
-const MANAGER_QUESTION = {
-  type: 'input',
-  name: 'officeNumber',
-  message: "What is the Manager's office number?",
-}
-
-const INTERN_QUESTION = {
-  type: 'input',
-  name: 'school',
-  message: "What school is the Intern currently attending?",
-}
-
-const ENGINEER_QUESTION = {
-  type: 'input',
-  name: 'github',
-  message: "What is the Engineer's GitHub username?",
-}
-
 function getEmployeeQuestions(employeeRole) {
   const employeeQuestions = [
     {
@@ -48,13 +30,25 @@ function getEmployeeQuestions(employeeRole) {
   ]
   switch(employeeRole) {
     case 'Manager':
-      employeeQuestions.push(MANAGER_QUESTION);
+      employeeQuestions.push({
+        type: 'input',
+        name: 'officeNumber',
+        message: `What is the ${employeeRole}'s office number?`,
+      });
       break;
     case 'Intern':
-      employeeQuestions.push(INTERN_QUESTION);
+      employeeQuestions.push({
+        type: 'input',
+        name: 'school',
+        message: `What school is the ${employeeRole} currently attending?`,
+      });
       break;
     case 'Engineer':
-      employeeQuestions.push(ENGINEER_QUESTION);
+      employeeQuestions.push({
+        type: 'input',
+        name: 'github',
+        message: `What is the ${employeeRole}'s GitHub username?`,
+      });
       break;
     default:
       throw new Error('Employee role does not exist!');
