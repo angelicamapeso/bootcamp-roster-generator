@@ -160,7 +160,17 @@ function generateHTMLFile(employees) {
     console.log('\nOutput directory does not exist. Creating one now.');
     fs.mkdir(OUTPUT_DIR, (err) => {
       if (err) throw err;
+
+      fs.writeFile(outputPath, htmlPage, (err) => {
+        if (err) throw err;
+        console.log('\nFile successfully created!\nThanks for using the Roster Generator!');
       });
+    });
+  } else {
+    fs.writeFile(outputPath, htmlPage, (err) => {
+      if (err) throw err;
+      console.log('\nFile successfully created!\nThanks for using the Roster Generator!');
+    });
   }
 }
 
