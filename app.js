@@ -152,6 +152,7 @@ async function runApp() {
   if (isStarting) {
     const manager = await getEmployeeInfo('Manager');
     employees.push(manager);
+    console.log('\nThank you! You may now add members to your team.')
 
     while (!exitProgram) {
       const action = await askAction(employees.length);
