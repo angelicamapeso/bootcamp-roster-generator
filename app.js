@@ -65,7 +65,7 @@ async function askToStart() {
       message: "What would you like to do?",
       choices: [
         {
-          name: 'Start',
+          name: 'Start inputting Manager info',
           value: true,
         },
         {
@@ -78,7 +78,7 @@ async function askToStart() {
 
   console.log(`
 Welcome to the Team Roster Generator!
-To generate a new roster, you'll need to input information about the team's manager first.
+To generate a new roster, you'll be prompted to input information about the team's manager first.
 `);
   const answers = await inquirer.prompt(intro);
   return answers.isStarting;
