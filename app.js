@@ -152,6 +152,10 @@ async function getEmployeeInfo(role) {
   }
 }
 
+function generateHTMLFile() {
+  console.log('\n-----RENDERING HTML-----');
+}
+
 async function runApp() {
   let exitProgram = false;
   const employees = [];
@@ -172,7 +176,7 @@ async function runApp() {
           employees.push(engineer);
           break;
         case 'Render HTML':
-          console.log('\n-----RENDERING HTML-----');
+          generateHTMLFile();
         case 'Exit without rendering':
         default:
           exitProgram = true;
