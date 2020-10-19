@@ -92,10 +92,10 @@ async function askAction(teamLength) {
       name: 'action',
       message: 'What would you like to do?',
       choices: [
-        'Add Intern',
-        'Add Engineer',
-        'Render HTML',
-        'Exit without rendering',
+        'Add an Intern',
+        'Add an Engineer',
+        'Render Team Roster',
+        'Exit without Rendering',
       ]
     }
   ];
@@ -156,17 +156,17 @@ async function runApp() {
     while (!exitProgram) {
       const action = await askAction(employees.length);
       switch(action) {
-        case 'Add Intern':
+        case 'Add an Intern':
           const intern = await getEmployeeInfo('Intern');
           employees.push(intern);
           break;
-        case 'Add Engineer':
+        case 'Add an Engineer':
           const engineer = await getEmployeeInfo('Engineer');
           employees.push(engineer);
           break;
-        case 'Render HTML':
+        case 'Render Team Roster':
           generateHTMLFile(employees);
-        case 'Exit without rendering':
+        case 'Exit without Rendering':
         default:
           exitProgram = true;
       }
