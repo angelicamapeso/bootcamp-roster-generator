@@ -128,6 +128,8 @@ async function getEmployeeInfo(role) {
       return new Intern(answers.name, answers.id, answers.email, answers.school);
     case 'Engineer':
       return new Engineer(answers.name, answers.id, answers.email, answers.github);
+    default:
+      throw new Error('Employee role does not exist!');
   }
 }
 
