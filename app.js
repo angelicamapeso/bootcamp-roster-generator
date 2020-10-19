@@ -91,10 +91,22 @@ async function askAction(teamLength) {
       name: 'action',
       message: 'What would you like to do?',
       choices: [
-        'Add an Intern',
-        'Add an Engineer',
-        'Render Team Roster',
-        'Exit without Rendering',
+        {
+          name: 'Add an Intern',
+          value: 0,
+        },
+        {
+          name: 'Add an Engineer',
+          value: 1,
+        },
+        {
+          name: 'Render Team Roster',
+          value: 2,
+        },
+        {
+          name: 'Exit without Rendering',
+          value: 3,
+        },
       ]
     }
   ];
@@ -158,19 +170,19 @@ async function runApp() {
     while (!exitProgram) {
       const action = await askAction(employees.length);
       switch(action) {
-        case 'Add an Intern':
+        case 0:
           const intern = await getEmployeeInfo('Intern');
           employees.push(intern);
           break;
-        case 'Add an Engineer':
+        case 1:
           const engineer = await getEmployeeInfo('Engineer');
           employees.push(engineer);
           break;
-        case 'Render Team Roster':
+        case 2:
           generateHTMLFile(employees);
           exitProgram = true;
           break;
-        case 'Exit without Rendering':
+        case 3:
         default:
           console.log('\nThank you for using the Roster Generator!\nExiting program ...');
           exitProgram = true;
