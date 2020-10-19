@@ -144,6 +144,13 @@ function generateHTMLFile(employees) {
   }
 }
 
+function writeHTML(path, html) {
+  fs.writeFile(path, html, (err) => {
+    if (err) throw err;
+    console.log('\nFile successfully created!\nThank you for using the Roster Generator!\nExiting program ...');
+  });
+}
+
 async function runApp() {
   let exitProgram = false;
   const employees = [];
