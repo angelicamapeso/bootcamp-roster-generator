@@ -155,6 +155,13 @@ function generateHTMLFile(employees) {
   const htmlPage = render(employees);
 
   console.log('\n-----RENDERING HTML-----');
+
+  if (!fs.existsSync(OUTPUT_DIR)) {
+    console.log('\nOutput directory does not exist. Creating one now.');
+    fs.mkdir(OUTPUT_DIR, (err) => {
+      if (err) throw err;
+      });
+  }
 }
 
 async function runApp() {
