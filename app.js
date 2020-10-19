@@ -79,7 +79,7 @@ async function askToStart() {
 
   console.log(`
 Welcome to the Team Roster Generator!
-Note: To generate a new roster, you'll need to input information about the team's manager first.
+To generate a new roster, you'll need to input information about the team's manager first.
 `);
   const answers = await inquirer.prompt(intro);
   return answers.isStarting;
