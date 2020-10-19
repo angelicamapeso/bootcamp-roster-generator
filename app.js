@@ -107,7 +107,7 @@ async function askAction(teamLength) {
 async function getEmployeeInfo(role) {
   const questions = getEmployeeQuestions(role);
 
-  console.log(`\n----- GETTING ${role.toUpperCase()} INFO -----`);
+  console.log(`\n>---- GETTING ${role.toUpperCase()} INFO ----<`);
   const answers = await inquirer.prompt(questions);
   switch(role) {
     case 'Manager':
@@ -124,7 +124,7 @@ function generateHTMLFile(employees) {
   const outputPath = path.join(OUTPUT_DIR, "team.html");
   const htmlPage = render(employees);
 
-  console.log('\n-----RENDERING HTML-----');
+  console.log('\n>>--- RENDERING HTML --->>');
 
   if (!fs.existsSync(OUTPUT_DIR)) {
     console.log('\nCreating output directory (output/) ...');
