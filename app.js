@@ -149,9 +149,10 @@ async function getEmployeeInfo(role) {
   }
 }
 
-function generateHTMLFile() {
+function generateHTMLFile(employees) {
   const OUTPUT_DIR = path.resolve(__dirname, "output");
   const outputPath = path.join(OUTPUT_DIR, "team.html");
+  const htmlPage = render(employees);
 
   console.log('\n-----RENDERING HTML-----');
 }
@@ -176,7 +177,7 @@ async function runApp() {
           employees.push(engineer);
           break;
         case 'Render HTML':
-          generateHTMLFile();
+          generateHTMLFile(employees);
         case 'Exit without rendering':
         default:
           exitProgram = true;
