@@ -110,10 +110,10 @@ async function getEmployeeInfo(role) {
 }
 
 // ---------- WRITING HTML OUTPUT FUNCTIONS ----------//
-function generateHTMLFile(employees) {
+function generateHTMLFile(employees, teamName) {
   const OUTPUT_DIR = path.resolve(__dirname, "output");
   const outputPath = path.join(OUTPUT_DIR, "team.html");
-  const htmlPage = render(employees);
+  const htmlPage = render(employees, teamName);
 
   console.log('\n>>--- RENDERING HTML --->>');
 
@@ -160,7 +160,7 @@ async function runApp() {
           employees.push(engineer);
           break;
         case 2:
-          generateHTMLFile(employees);
+          generateHTMLFile(employees, teamName);
           exitProgram = true;
           break;
         case 3:
