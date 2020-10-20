@@ -36,6 +36,29 @@ To generate a new roster, you'll be prompted on basic info about your team (team
   return answers.isStarting;
 }
 
+async function askTeamName() {
+  const teamNameQuestion = [
+    {
+      type: 'input',
+      name: 'teamName',
+      message: "What is your team's name?",
+      validate: (answer) => {
+        return new Promise((resolve, reject) => {
+          if (answer.trim() === '') {
+            resolve('Team name cannot be empty!');
+          } else {
+            resolve(true);
+          }
+        });
+      },
+    },
+  ]
+
+  console.log('\n>----- GETTING BASIC INFO -----<');
+  const answer = await inquirer.prompt(teamNameQuestion);
+  return answer.teamName;
+}
+
 async function askAction(teamLength) {
   const actions = [
     {
