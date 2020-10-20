@@ -63,6 +63,16 @@ function isEmpty(answer) {
   return (answer.trim() === '');
 }
 
+function isValidName(name) {
+  return new Promise((resolve, reject) => {
+    if (isEmpty(name)) {
+      resolve('Name cannot be empty!');
+    } else {
+      resolve(true);
+    }
+  });
+}
+
 // ---------- ACTION FUNCTIONS ----------//
 async function askToStart() {
   const intro = [
