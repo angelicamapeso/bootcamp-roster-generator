@@ -128,6 +128,24 @@ function isValidSchool(school) {
   });
 }
 
+function isValidGithub(github) {
+  return new Promise((resolve, reject) => {
+    if (isEmpty(github)) {
+      resolve('GitHub username cannot be empty!');
+    }
+    //Regex from:
+    //Author: shinnn
+    //Date: Jan. 18, 2017
+    //Code version: 1.0.0
+    //Available at: https://github.com/shinnn/github-username-regex
+    else if (/^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i.test(github)) {
+      resolve(true);
+    } else {
+      resolve('Invalid GitHub username format!');
+    }
+  });
+}
+
 // ---------- ACTION FUNCTIONS ----------//
 async function askToStart() {
   const intro = [
