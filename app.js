@@ -45,6 +45,7 @@ function getEmployeeQuestions(employeeRole) {
         type: 'input',
         name: 'school',
         message: `What school is the ${employeeRole} currently attending?`,
+        validate: isValidSchool,
       });
       break;
     case 'Engineer':
