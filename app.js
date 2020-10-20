@@ -22,6 +22,7 @@ function getEmployeeQuestions(employeeRole) {
       type: 'input',
       name: 'id',
       message: `What is the ${employeeRole}'s id?`,
+      validate: isValidId,
     },
     {
       type: 'input',
