@@ -59,7 +59,7 @@ async function askTeamName() {
   return answer.teamName;
 }
 
-async function askAction(teamLength) {
+async function askAction(teamLength, teamName) {
   const actions = [
     {
       type: 'list',
@@ -86,7 +86,7 @@ async function askAction(teamLength) {
     }
   ];
 
-  console.log(`\nYour team currently consists of: ${teamLength} member${teamLength > 1 ? 's' : ''}`);
+  console.log(`\n${teamName} currently consists of: ${teamLength} member${teamLength > 1 ? 's' : ''}`);
   const answer = await inquirer.prompt(actions);
   return answer.action;
 }
@@ -146,10 +146,10 @@ async function runApp() {
     const teamName = await askTeamName();
     const manager = await getEmployeeInfo('Manager');
     employees.push(manager);
-    console.log('\nThank you! You may now add members to your team.')
+    console.log(`\nThank you! You may now add members to your team: ${teamName}`);
 
     while (!exitProgram) {
-      const action = await askAction(employees.length);
+      const action = await askAction(employees.length, teamName);
       switch(action) {
         case 0:
           const intern = await getEmployeeInfo('Intern');
