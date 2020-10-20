@@ -28,6 +28,7 @@ function getEmployeeQuestions(employeeRole) {
       type: 'input',
       name: 'email',
       message: `What is the ${employeeRole}'s email?`,
+      validate: isValidEmail,
     }
   ]
   switch(employeeRole) {
