@@ -37,6 +37,7 @@ function getEmployeeQuestions(employeeRole) {
         type: 'input',
         name: 'officeNumber',
         message: `What is the ${employeeRole}'s office number?`,
+        validate: isValidOfficeNum,
       });
       break;
     case 'Intern':
