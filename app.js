@@ -143,6 +143,7 @@ async function runApp() {
 
   const isStarting = await askToStart();
   if (isStarting) {
+    const teamName = await askTeamName();
     const manager = await getEmployeeInfo('Manager');
     employees.push(manager);
     console.log('\nThank you! You may now add members to your team.')
