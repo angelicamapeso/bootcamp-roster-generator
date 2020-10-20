@@ -86,6 +86,24 @@ function isValidId(id) {
   });
 }
 
+function isValidEmail(email) {
+  return new Promise((resolve, reject) => {
+    if (isEmpty(email)) {
+      resolve('Email cannot be empty!');
+    }
+    //email format: https://en.wikipedia.org/wiki/Email_address#Local-part
+    //local name can start with any character except @
+    //domain can only contain letters, numbers and one hyphen that isn't beginning or last character
+    //string must end with group pattern: .text
+    //end pattern can be repeatable: .text.moretext.com (only letters allowed at this last part)
+    else if (/^[^ @]+@[a-zA-Z0-9]+\-?[a-zA-Z0-9]+(\.[a-zA-Z]+)+$/.test(email)) {
+      resolve(true);
+    } else {
+      resolve('Invalid email format!');
+    }
+  });
+}
+
 // ---------- ACTION FUNCTIONS ----------//
 async function askToStart() {
   const intro = [
