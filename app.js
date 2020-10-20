@@ -7,6 +7,7 @@ const fs = require("fs");
 
 const render = require("./lib/htmlRenderer");
 
+// ---------- EMPLOYEE QUESTIONS ----------//
 //since managers, interns and engineers have one additional property
 //only need one additional question to generic employee questions
 function getEmployeeQuestions(employeeRole) {
@@ -57,6 +58,9 @@ function getEmployeeQuestions(employeeRole) {
   return employeeQuestions.slice(0);
 }
 
+// ---------- VALIDATION FUNCTIONS ----------//
+
+// ---------- ACTION FUNCTIONS ----------//
 async function askToStart() {
   const intro = [
     {
@@ -116,6 +120,7 @@ async function askAction(teamLength) {
   return answer.action;
 }
 
+// ---------- RETRIEVING INFO FUNCTION ----------//
 async function getEmployeeInfo(role) {
   const questions = getEmployeeQuestions(role);
 
@@ -133,6 +138,7 @@ async function getEmployeeInfo(role) {
   }
 }
 
+// ---------- WRITING HTML OUTPUT FUNCTIONS ----------//
 function generateHTMLFile(employees) {
   const OUTPUT_DIR = path.resolve(__dirname, "output");
   const outputPath = path.join(OUTPUT_DIR, "team.html");
@@ -159,6 +165,7 @@ function writeHTML(path, html) {
   });
 }
 
+// ---------- MAIN APP FUNCTION ----------//
 async function runApp() {
   let exitProgram = false;
   const employees = [];
