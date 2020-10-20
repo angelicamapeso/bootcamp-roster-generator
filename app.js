@@ -53,6 +53,7 @@ function getEmployeeQuestions(employeeRole) {
         type: 'input',
         name: 'github',
         message: `What is the ${employeeRole}'s GitHub username?`,
+        validate: isValidGithub,
       });
       break;
     default:
