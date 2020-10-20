@@ -59,6 +59,9 @@ function getEmployeeQuestions(employeeRole) {
 }
 
 // ---------- VALIDATION FUNCTIONS ----------//
+function isEmpty(answer) {
+  return (answer.trim() === '');
+}
 
 // ---------- ACTION FUNCTIONS ----------//
 async function askToStart() {
