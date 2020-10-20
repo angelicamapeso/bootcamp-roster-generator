@@ -16,6 +16,7 @@ function getEmployeeQuestions(employeeRole) {
       type: 'input',
       name: 'name',
       message: `What is the ${employeeRole}'s name?`,
+      validate: isValidName,
     },
     {
       type: 'input',
