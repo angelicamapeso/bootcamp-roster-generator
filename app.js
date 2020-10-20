@@ -118,6 +118,16 @@ function isValidOfficeNum(officeNum) {
   });
 }
 
+function isValidSchool(school) {
+  return new Promise((resolve, reject) => {
+    if (isEmpty(school)) {
+      resolve('School cannot be empty!');
+    } else {
+      resolve(true);
+    }
+  });
+}
+
 // ---------- ACTION FUNCTIONS ----------//
 async function askToStart() {
   const intro = [
