@@ -73,6 +73,19 @@ function isValidName(name) {
   });
 }
 
+function isValidId(id) {
+  return new Promise((resolve, reject) => {
+    //can only contain numbers
+    if (isEmpty(id)) {
+      resolve('ID cannot be empty!');
+    } else if (/^\d+$/.test(id)) {
+      resolve(true);
+    } else {
+      resolve('ID can only contain numbers!');
+    }
+  });
+}
+
 // ---------- ACTION FUNCTIONS ----------//
 async function askToStart() {
   const intro = [
