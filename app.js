@@ -104,6 +104,20 @@ function isValidEmail(email) {
   });
 }
 
+function isValidOfficeNum(officeNum) {
+  return new Promise((resolve, reject) => {
+    if (isEmpty(officeNum)) {
+      resolve('Office number cannot be empty!');
+    }
+    //can only contain numbers
+    else if (/^[0-9]+$/.test(officeNum)) {
+      resolve(true);
+    } else {
+      resolve('Office number can only contain numbers!');
+    }
+  });
+}
+
 // ---------- ACTION FUNCTIONS ----------//
 async function askToStart() {
   const intro = [
