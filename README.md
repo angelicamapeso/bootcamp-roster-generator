@@ -2,7 +2,7 @@
 
 ![Team Roster Preview](./assets/teamRoster_preview.png)
 
-A command line program for generating a team roster as a web page.
+A command line program for generating a webpage for a software engineering team roster.
 
 According to the acceptance criteria, a team consists of one Manager and any number of Interns and/or Engineers. As such, the prompts will begin Manager-specific information first before allowing the user to add Interns/Engineers.
 
